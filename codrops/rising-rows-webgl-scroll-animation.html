@@ -4,7 +4,7 @@
 <head>
 <title>Rising Rows WebGL Scroll Animation | Codrops</title>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="description" content="On-Scroll Column & Row Animations" />
 <link rel="canonical" href="http://tympanus.net/codrops/?p=73182" />
 <link rel="icon" href="https://tympanus.net/favicon/favicon.ico" />
@@ -45,9 +45,6 @@
         --grid-max-width: 1000px;
     }
 
-    html { 
-        background: var(--color-bg);
-    }
     body {
         margin: 0;
         color: var(--color-text);
@@ -146,6 +143,8 @@
         content: "";
         position: fixed;
         z-index: 4000;
+        inset: -100px;
+        background: var(--color-bg); 
     }
 
     .js .loading::before {
@@ -163,12 +162,6 @@
         opacity: 0.4;
         background: var(--color-link);
         animation: loaderAnim 0.7s linear infinite alternate forwards;
-    }
-
-    .js .loading {                                                                                                        
-        overflow: hidden;
-        height: 100vh;
-        height: 100dvh;
     }
 
     @keyframes loaderAnim {
