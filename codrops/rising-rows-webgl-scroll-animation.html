@@ -162,6 +162,12 @@
         animation: loaderAnim 0.7s linear infinite alternate forwards;
     }
 
+    /* Safari 26 on iPhone keeps drawing the page under its see-through bottom bar, where the fixed cover above
+       can't reach, so the page itself stays hidden until it's ready */
+    .js .loading main {
+        visibility: hidden;
+    }
+
     @keyframes loaderAnim {
         to {
             opacity: 1;
@@ -348,7 +354,7 @@
 
     @media screen and (min-width: 53em) {
         /* The title top left with the links right after it, and the ad's place top right (filled on the live server);
-    	   under them, the tags on the left and the variations on the right, their tops in line */
+           under them, the tags on the left and the variations on the right, their tops in line */
         .frame {
             grid-template-columns: auto 1fr auto;
             grid-template-areas: "title links sponsor" "tags tags demos";
